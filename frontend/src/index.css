@@ -1,0 +1,1297 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* =========================================================
+   DATAPILOT AI — GLOBAL THEME SYSTEM
+========================================================= */
+
+:root {
+
+  color-scheme: dark;
+
+  --dp-bg: #090909;
+  --dp-bg-soft: #0d0d0d;
+
+  --dp-sidebar: #0b0b0b;
+  --dp-header: rgba(9, 9, 9, 0.90);
+
+  --dp-panel: #101010;
+  --dp-panel-2: #151515;
+  --dp-panel-3: #191919;
+
+  --dp-surface-soft: rgba(255, 255, 255, 0.025);
+  --dp-hover: rgba(255, 255, 255, 0.045);
+
+  --dp-border: rgba(255, 255, 255, 0.08);
+  --dp-border-strong: rgba(255, 255, 255, 0.13);
+
+  --dp-text: #f5f5f0;
+  --dp-text-soft: #d6d3cd;
+
+  --dp-muted: #918d86;
+  --dp-muted-2: #68645e;
+
+  --dp-accent: #ff795b;
+  --dp-accent-soft: rgba(255, 121, 91, 0.12);
+  --dp-accent-border: rgba(255, 121, 91, 0.25);
+
+  --dp-green: #69d6a0;
+  --dp-yellow: #f4c95d;
+  --dp-red: #ff7272;
+}
+
+
+/* =========================================================
+   LIGHT THEME
+========================================================= */
+
+html.light {
+
+  color-scheme: light;
+
+  --dp-bg: #f6f7f9;
+  --dp-bg-soft: #eef1f4;
+
+  --dp-sidebar: #ffffff;
+  --dp-header: rgba(255, 255, 255, 0.92);
+
+  --dp-panel: #ffffff;
+  --dp-panel-2: #f9fafb;
+  --dp-panel-3: #f1f3f5;
+
+  --dp-surface-soft: rgba(15, 23, 42, 0.035);
+  --dp-hover: rgba(15, 23, 42, 0.055);
+
+  --dp-border: rgba(15, 23, 42, 0.10);
+  --dp-border-strong: rgba(15, 23, 42, 0.16);
+
+  --dp-text: #17191d;
+  --dp-text-soft: #353941;
+
+  --dp-muted: #626975;
+  --dp-muted-2: #858b95;
+
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+html {
+  min-height: 100%;
+  background: var(--dp-bg);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body {
+
+  margin: 0;
+
+  min-width: 320px;
+
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(255, 121, 91, 0.055),
+      transparent 32%
+    ),
+    var(--dp-bg);
+
+  color: var(--dp-text);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+
+  text-rendering: optimizeLegibility;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+}
+
+
+/* Light background */
+
+html.light body {
+
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(255, 121, 91, 0.045),
+      transparent 32%
+    ),
+    var(--dp-bg);
+
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+  background: rgba(255, 121, 91, 0.25);
+  color: inherit;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.20);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(255, 255, 255, 0.12)
+    transparent;
+}
+
+
+/* Light scrollbar */
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.18);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.28);
+}
+
+html.light * {
+  scrollbar-color:
+    rgba(15, 23, 42, 0.18)
+    transparent;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+:focus-visible {
+
+  outline:
+    2px solid
+    rgba(255, 121, 91, 0.65);
+
+  outline-offset: 2px;
+
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.glass {
+
+  background:
+    var(--dp-panel);
+
+  border:
+    1px solid
+    var(--dp-border);
+
+  box-shadow:
+    0 12px 40px
+    rgba(0, 0, 0, 0.10);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+}
+
+.glass:hover {
+
+  border-color:
+    var(--dp-border-strong);
+
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.dp-card {
+
+  background:
+    var(--dp-panel);
+
+  border:
+    1px solid
+    var(--dp-border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.08);
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.3s ease;
+
+}
+
+.dp-card:hover {
+
+  border-color:
+    var(--dp-border-strong);
+
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid-bg {
+
+  background-color:
+    var(--dp-bg);
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    40px 40px;
+
+}
+
+html.light .grid-bg {
+
+  background-image:
+    linear-gradient(
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(15, 23, 42, 0.035) 1px,
+      transparent 1px
+    );
+
+}
+
+
+/* =========================================================
+   DOT BACKGROUND
+========================================================= */
+
+.dot-bg {
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.11) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    24px 24px;
+
+}
+
+html.light .dot-bg {
+
+  background-image:
+    radial-gradient(
+      rgba(15, 23, 42, 0.12) 1px,
+      transparent 1px
+    );
+
+}
+
+
+/* =========================================================
+   ACCENT
+========================================================= */
+
+.gradient-text {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9a7c,
+      #ff795b
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color:
+    transparent;
+
+}
+
+.gradient-text-blue {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff9a7c,
+      #ff795b
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color:
+    transparent;
+
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.glow {
+
+  box-shadow:
+    0 0 70px
+    rgba(255, 121, 91, 0.08);
+
+}
+
+.glow-sm {
+
+  box-shadow:
+    0 0 30px
+    rgba(255, 121, 91, 0.07);
+
+}
+
+.glow-violet {
+
+  box-shadow:
+    0 0 60px
+    rgba(255, 121, 91, 0.06);
+
+}
+
+.glow-success {
+
+  box-shadow:
+    0 0 40px
+    rgba(105, 214, 160, 0.08);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.dp-button {
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+.dp-button:hover:not(:disabled) {
+
+  transform:
+    translateY(-1px);
+
+}
+
+.dp-button:active:not(:disabled) {
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
+
+input,
+select,
+textarea {
+
+  color:
+    var(--dp-text);
+
+  background:
+    var(--dp-surface-soft);
+
+  border-color:
+    var(--dp-border);
+
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+
+}
+
+input::placeholder,
+textarea::placeholder {
+
+  color:
+    var(--dp-muted-2);
+
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+
+  border-color:
+    var(--dp-border-strong);
+
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+
+  border-color:
+    var(--dp-accent-border);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 121, 91, 0.07);
+
+  outline:
+    none;
+
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.dp-table {
+
+  width: 100%;
+
+  border-collapse:
+    collapse;
+
+}
+
+.dp-table th {
+
+  padding:
+    12px 16px;
+
+  text-align:
+    left;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.08em;
+
+  color:
+    var(--dp-muted);
+
+  background:
+    var(--dp-surface-soft);
+
+  border-bottom:
+    1px solid
+    var(--dp-border);
+
+}
+
+.dp-table td {
+
+  padding:
+    13px 16px;
+
+  font-size:
+    13px;
+
+  color:
+    var(--dp-text-soft);
+
+  border-bottom:
+    1px solid
+    var(--dp-border);
+
+}
+
+.dp-table tbody tr {
+
+  transition:
+    background 0.18s ease;
+
+}
+
+.dp-table tbody tr:hover {
+
+  background:
+    var(--dp-hover);
+
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.dp-badge {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+
+  border-radius:
+    999px;
+
+  padding:
+    5px 9px;
+
+  font-size:
+    10px;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.04em;
+
+}
+
+.dp-badge-success {
+
+  color:
+    #23895c;
+
+  background:
+    rgba(105, 214, 160, 0.10);
+
+  border:
+    1px solid
+    rgba(105, 214, 160, 0.20);
+
+}
+
+.dp-badge-warning {
+
+  color:
+    #a97900;
+
+  background:
+    rgba(244, 201, 93, 0.12);
+
+  border:
+    1px solid
+    rgba(244, 201, 93, 0.22);
+
+}
+
+.dp-badge-danger {
+
+  color:
+    #c74444;
+
+  background:
+    rgba(255, 114, 114, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 114, 114, 0.20);
+
+}
+
+.dp-badge-info {
+
+  color:
+    #d95336;
+
+  background:
+    rgba(255, 121, 91, 0.10);
+
+  border:
+    1px solid
+    rgba(255, 121, 91, 0.20);
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.dp-progress {
+
+  width:
+    100%;
+
+  height:
+    6px;
+
+  overflow:
+    hidden;
+
+  border-radius:
+    999px;
+
+  background:
+    var(--dp-hover);
+
+}
+
+.dp-progress > div {
+
+  height:
+    100%;
+
+  border-radius:
+    inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff8d70,
+      #ff6f52
+    );
+
+  transition:
+    width 0.6s ease;
+
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+.dp-pulse {
+
+  animation:
+    dp-pulse 2s ease-in-out infinite;
+
+}
+
+@keyframes dp-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+}
+
+.dp-float {
+
+  animation:
+    dp-float 5s ease-in-out infinite;
+
+}
+
+@keyframes dp-float {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-7px);
+  }
+
+}
+
+.dp-shimmer {
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+}
+
+.dp-shimmer::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  transform:
+    translateX(-100%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+
+  animation:
+    dp-shimmer 1.8s infinite;
+
+}
+
+@keyframes dp-shimmer {
+
+  100% {
+    transform:
+      translateX(100%);
+  }
+
+}
+
+.dp-spin {
+
+  animation:
+    dp-spin 1s linear infinite;
+
+}
+
+@keyframes dp-spin {
+
+  from {
+    transform:
+      rotate(0deg);
+  }
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   MARKDOWN
+========================================================= */
+
+.prose {
+  line-height: 1.8;
+}
+
+.prose h1 {
+
+  margin-top:
+    1.5rem;
+
+  margin-bottom:
+    1rem;
+
+  font-size:
+    1.8rem;
+
+  font-weight:
+    800;
+
+}
+
+.prose h2 {
+
+  margin-top:
+    1.5rem;
+
+  margin-bottom:
+    0.8rem;
+
+  font-size:
+    1.35rem;
+
+  font-weight:
+    800;
+
+}
+
+.prose h3 {
+
+  margin-top:
+    1.25rem;
+
+  margin-bottom:
+    0.6rem;
+
+  font-size:
+    1.1rem;
+
+  font-weight:
+    700;
+
+}
+
+.prose p {
+  margin:
+    0.65rem 0;
+}
+
+.prose ul,
+.prose ol {
+
+  margin:
+    0.75rem 0;
+
+  padding-left:
+    1.5rem;
+
+}
+
+.prose li {
+  margin:
+    0.35rem 0;
+}
+
+.prose code {
+
+  border-radius:
+    5px;
+
+  padding:
+    0.15rem 0.35rem;
+
+  background:
+    rgba(255, 121, 91, 0.08);
+
+}
+
+.prose pre {
+
+  overflow-x:
+    auto;
+
+  margin:
+    1rem 0;
+
+  padding:
+    1rem;
+
+  border-radius:
+    10px;
+
+  background:
+    #080808;
+
+  border:
+    1px solid
+    var(--dp-border);
+
+}
+
+html.light .prose pre {
+
+  background:
+    #f1f3f5;
+
+  color:
+    #252830;
+
+}
+
+.prose blockquote {
+
+  margin:
+    1rem 0;
+
+  padding-left:
+    1rem;
+
+  border-left:
+    3px solid
+    rgba(255, 121, 91, 0.45);
+
+  color:
+    var(--dp-muted);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x:
+      hidden;
+  }
+
+}
+
+
+/* =========================================================
+   LIGHT THEME — EXISTING HARD-CODED TAILWIND OVERRIDES
+========================================================= */
+
+/*
+ * Your pages use many existing dark Tailwind utility classes.
+ * These rules allow the existing pages to switch without
+ * rewriting every page individually.
+ */
+
+
+/* ---------- DARK BACKGROUNDS ---------- */
+
+html.light [class*="bg-[#090909]"],
+html.light [class*="bg-[#0b0b0b]"],
+html.light [class*="bg-[#0d0d0d]"],
+html.light [class*="bg-[#0e0e0e]"],
+html.light [class*="bg-[#101010]"],
+html.light [class*="bg-[#111111]"],
+html.light [class*="bg-[#111]"],
+html.light [class*="bg-[#151515]"],
+html.light [class*="bg-[#191919]"] {
+
+  background-color:
+    var(--dp-panel) !important;
+
+}
+
+
+/* ---------- WHITE TRANSPARENT BACKGROUNDS ---------- */
+
+html.light [class*="bg-white/[0.02]"],
+html.light [class*="bg-white/[0.025]"],
+html.light [class*="bg-white/[0.035]"],
+html.light [class*="bg-white/[0.04]"],
+html.light [class*="bg-white/[0.045]"],
+html.light [class*="bg-white/[0.05]"],
+html.light [class*="bg-white/[0.06]"],
+html.light [class*="bg-white/[0.07]"],
+html.light [class*="bg-white/[0.075]"],
+html.light [class*="bg-white/[0.08]"] {
+
+  background-color:
+    var(--dp-surface-soft) !important;
+
+}
+
+
+/* ---------- DARK TEXT ---------- */
+
+html.light [class*="text-[#f5f2ec]"],
+html.light [class*="text-[#f5f5f0]"],
+html.light [class*="text-[#f4f2ed]"],
+html.light [class*="text-[#f4f1eb]"],
+html.light [class*="text-[#e8e5df]"],
+html.light [class*="text-[#e5e1da]"],
+html.light [class*="text-[#e6e2dc]"],
+html.light [class*="text-[#dedad3]"],
+html.light [class*="text-[#d9d5ce]"] {
+
+  color:
+    var(--dp-text) !important;
+
+}
+
+
+/* ---------- SECONDARY TEXT ---------- */
+
+html.light [class*="text-[#aaa59d]"],
+html.light [class*="text-[#918d86]"],
+html.light [class*="text-[#85817a]"],
+html.light [class*="text-[#77736d]"],
+html.light [class*="text-[#716d66]"],
+html.light [class*="text-[#6f6b64]"],
+html.light [class*="text-[#68645e]"],
+html.light [class*="text-[#625e58]"],
+html.light [class*="text-[#5f5b55]"],
+html.light [class*="text-[#57534d]"] {
+
+  color:
+    var(--dp-muted) !important;
+
+}
+
+
+/* ---------- WHITE BORDERS ---------- */
+
+html.light [class*="border-white/[0.05]"],
+html.light [class*="border-white/[0.06]"],
+html.light [class*="border-white/[0.07]"],
+html.light [class*="border-white/[0.08]"],
+html.light [class*="border-white/[0.1]"],
+html.light [class*="border-white/[0.13]"] {
+
+  border-color:
+    var(--dp-border) !important;
+
+}
+
+
+/* ---------- WHITE DIVIDERS ---------- */
+
+html.light [class*="via-white/[0.12]"] {
+
+  --tw-gradient-to:
+    rgba(15, 23, 42, 0);
+
+}
+
+
+/* =========================================================
+   LIGHT SELECT / FORM CONTROLS
+========================================================= */
+
+html.light input,
+html.light textarea,
+html.light select {
+
+  color:
+    #20242b !important;
+
+  background-color:
+    #ffffff !important;
+
+  border-color:
+    rgba(15, 23, 42, 0.12) !important;
+
+  color-scheme:
+    light !important;
+
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+
+  color:
+    #8a9099 !important;
+
+}
+
+html.light select option {
+
+  background:
+    #ffffff !important;
+
+  color:
+    #20242b !important;
+
+}
+
+html.light select option:checked {
+
+  background:
+    #ff795b !important;
+
+  color:
+    #160b08 !important;
+
+}
+
+
+/* =========================================================
+   DARK SELECT
+========================================================= */
+
+html.dark select {
+
+  background-color:
+    #111111 !important;
+
+  color:
+    #f5f5f5 !important;
+
+  border-color:
+    rgba(255, 255, 255, 0.10) !important;
+
+  color-scheme:
+    dark !important;
+
+}
+
+html.dark select:focus {
+
+  background-color:
+    #151515 !important;
+
+  color:
+    #ffffff !important;
+
+  outline:
+    none;
+
+  border-color:
+    rgba(255, 122, 89, 0.55) !important;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(255, 122, 89, 0.08);
+
+}
+
+html.dark select option {
+
+  background-color:
+    #151515 !important;
+
+  color:
+    #f5f2ec !important;
+
+}
+
+html.dark select option:checked {
+
+  background-color:
+    #ff7a59 !important;
+
+  color:
+    #080808 !important;
+
+}
+
+
+/* =========================================================
+   THEME TRANSITION
+========================================================= */
+
+body,
+aside,
+header,
+main,
+.dp-card,
+.glass,
+input,
+textarea,
+select,
+button {
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    scroll-behavior:
+      auto !important;
+
+  }
+
+}

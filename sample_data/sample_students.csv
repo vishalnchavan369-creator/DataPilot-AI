@@ -1,0 +1,16 @@
+student_id,age,attendance,study_hours,assignments,internet_access,final_score,pass
+S001,22,92,12,9,Yes,88,Yes
+S002,23,81,8,8,Yes,74,Yes
+S003,21,67,5,6,No,55,No
+S004,24,95,15,10,Yes,93,Yes
+S005,22,73,7,7,Yes,64,Yes
+S006,25,60,4,5,No,48,No
+S007,23,88,11,9,Yes,82,Yes
+S008,21,70,6,6,No,58,No
+S009,24,90,13,10,Yes,91,Yes
+S010,22,78,9,8,Yes,71,Yes
+S011,23,65,5,5,No,52,No
+S012,21,96,16,10,Yes,95,Yes
+S013,24,84,10,8,Yes,79,Yes
+S014,22,69,6,6,No,57,No
+S015,25,93,14,10,Yes,90,Yes

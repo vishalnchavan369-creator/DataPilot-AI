@@ -1,0 +1,17 @@
+@"
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.log
+"@ | Out-File -FilePath .gitignore -Encoding utf8
+# Runtime uploaded datasets
+backend/data/*
+!backend/data/.gitkeep
+
+Project  Preview Video/
